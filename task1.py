@@ -8,7 +8,8 @@ import doctest
 # TODO: описать класс
 class Profile:
     def __init__(self, mobile: str, years: int, username: str):
-        """ Конструктор цифрового профиля
+        """
+        Конструктор цифрового профиля
 
         :param mobile: Контактный номер
         :param years: Количество лет

@@ -1,5 +1,6 @@
 from task1 import Profile, MoneyStorage, NumericRatio
 
+
 if __name__ == "__main__":
     # Создаем экземпляры всех классов
     user_profile = Profile("89997778899", 20, "Roman")
