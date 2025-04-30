@@ -8,8 +8,7 @@ import doctest
 # TODO: описать класс
 class Profile:
     def __init__(self, mobile: str, years: int, username: str):
-        '''
-        Конструктор цифрового профиля
+        """ Конструктор цифрового профиля
 
         :param mobile: Контактный номер
         :param years: Количество лет
@@ -17,7 +16,7 @@ class Profile:
 
         Пример:
         >>> account = Profile("89997778899", 30, "Ivan")
-        '''
+        """
         phone_validator = re.compile(r'(8|\+7)\d{10}')
         if not re.fullmatch(phone_validator, mobile):
             raise ValueError('Неверный телефонный номер')
@@ -36,7 +35,7 @@ class Profile:
         self.username = username
 
     def display(self) -> str:
-        '''
+        """
         Отображение профильной информации
 
         :return: Форматированная строка данных
@@ -45,13 +44,13 @@ class Profile:
         >>> account = Profile("89997778899", 30, "Ivan")
         >>> account.display()
         'Профиль: Ivan, Телефон: 89997778899, Возраст: 30'
-        '''
+        """
         return (f'Профиль: {self.username}, '
                 f'Телефон: {self.mobile}, '
                 f'Возраст: {self.years}')
 
     def rename(self, new_username: str = 'default') -> None:
-        '''
+        """
         Изменение имени пользователя
 
         :param new_username: Новый псевдоним (по умолчанию 'default')
@@ -59,7 +58,7 @@ class Profile:
         Пример:
         >>> account = Profile("89997778899", 30, "Ivan")
         >>> account.rename("NewIvan")
-        '''
+        """
         if not isinstance(new_username, str):
             raise TypeError("Имя должно быть строковым значением")
         self.username = new_username
@@ -68,7 +67,7 @@ class Profile:
 # TODO: описать ещё класс
 class MoneyStorage:
     def __init__(self, holder: str, funds: float):
-        '''
+        """
         Инициализация денежного хранилища
 
         :param holder: Владелец средств
@@ -76,7 +75,7 @@ class MoneyStorage:
 
         Пример:
         >>> wallet = MoneyStorage("Ivan", 5000)
-        '''
+        """
         if not isinstance(holder, str):
             raise TypeError("Имя владельца должно быть строкой")
         self.holder = holder
@@ -88,7 +87,7 @@ class MoneyStorage:
         self.funds = funds
 
     def balance(self) -> str:
-        '''
+        """
         Проверка состояния счета
 
         :return: Информация о средствах
@@ -97,11 +96,11 @@ class MoneyStorage:
         >>> wallet = MoneyStorage("Ivan", 5000)
         >>> wallet.balance()
         'Владелец: Ivan, Доступно: 5000.00'
-        '''
+        """
         return f'Владелец: {self.holder}, Доступно: {self.funds:.2f}'
 
     def add_money(self, amount: float = 100.0) -> None:
-        '''
+        """
         Пополнение баланса
 
         :param amount: Сумма для зачисления
@@ -109,7 +108,7 @@ class MoneyStorage:
         Пример:
         >>> wallet = MoneyStorage("Ivan", 5000)
         >>> wallet.add_money(1000)
-        '''
+        """
         if not isinstance(amount, (int, float)):
             raise TypeError("Необходимо указать числовое значение")
         if amount < 100:
@@ -117,7 +116,7 @@ class MoneyStorage:
         self.funds += amount
 
     def take_money(self, amount: float = 100.0) -> None:
-        '''
+        """
         Снятие денежных средств
 
         :param amount: Запрашиваемая сумма
@@ -125,7 +124,7 @@ class MoneyStorage:
         Пример:
         >>> wallet = MoneyStorage("Ivan", 5000)
         >>> wallet.take_money(2000)
-        '''
+        """
         if not isinstance(amount, (int, float)):
             raise TypeError("Необходимо указать числовое значение")
         if amount > self.funds:
@@ -138,7 +137,7 @@ class MoneyStorage:
 # TODO: и ещё один
 class NumericRatio:
     def __init__(self, top: int, bottom: int):
-        '''
+        """
         Создание дробного соотношения
 
         :param top: Верхнее значение
@@ -146,7 +145,7 @@ class NumericRatio:
 
         Пример:
         >>> ratio = NumericRatio(5, 8)
-        '''
+        """
         if not isinstance(top, int):
             raise TypeError("Верхнее значение должно быть целым числом")
         self.top = top
@@ -158,20 +157,20 @@ class NumericRatio:
         self.bottom = bottom
 
     def as_decimal(self) -> float:
-        '''
+        """
         Преобразование в десятичный формат
 
         :return: Десятичное представление
 
         Пример:
-        >>> ratio = NumericRatio(5, 8) 
+        >>> ratio = NumericRatio(5, 8)
         >>> ratio.as_decimal()
         0.625
-        '''
+        """
         return self.top / self.bottom
 
     def product(self, other_top: int = 1, other_bottom: int = 1) -> str:
-        '''
+        """
         Расчет произведения дробей
 
         :param other_top: Верхнее значение второй дроби
@@ -183,7 +182,7 @@ class NumericRatio:
         >>> ratio = NumericRatio(5, 8)
         >>> ratio.product(3, 4)
         '15/32'
-        '''
+        """
         if not isinstance(other_top, int):
             raise TypeError("Верхнее значение должно быть целым числом")
 
