@@ -1,3 +1,4 @@
+
 import re
 import doctest
 
@@ -46,7 +47,9 @@ class Profile:
         >>> account.display()
         'Профиль: Ivan, Телефон: 89997778899, Возраст: 30'
         '''
-        return f'Профиль: {self.username}, Телефон: {self.mobile}, Возраст: {self.years}'
+        return (f'Профиль: {self.username}, '
+                f'Телефон: {self.mobile}, '
+                f'Возраст: {self.years}')
 
     def rename(self, new_username: str = 'default') -> None:
         '''
@@ -132,6 +135,7 @@ class MoneyStorage:
             raise ValueError("Минимальная сумма снятия - 100 единиц")
         self.funds -= amount
 
+
 # TODO: и ещё один
 class NumericRatio:
     def __init__(self, top: int, bottom: int):
@@ -161,7 +165,7 @@ class NumericRatio:
         :return: Десятичное представление
 
         Пример:
-        >>> ratio = NumericRatio(5, 8)
+        >>> ratio = NumericRatio(5, 8) 
         >>> ratio.as_decimal()
         0.625
         '''
