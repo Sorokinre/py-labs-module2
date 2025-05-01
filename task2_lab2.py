@@ -50,7 +50,9 @@ if __name__ == '__main__':
     list_books = [
         Book(id_=book_dict["id"], name=book_dict["name"], pages=book_dict["pages"]) for book_dict in BOOKS_DATABASE
     ]
-    library_with_books = Library(books=list_books)  # Инициализируем библиотеку с книгами
+    # Инициализируем библиотеку с книгами
+    library_with_books = Library(books=list_books)
     print(library_with_books.get_next_book_id())  # Проверяем следующий id
 
-    print(library_with_books.get_index_by_book_id(1))  # Проверяем индекс книги с id=1
+    # Проверяем индекс книги с id=1
+    print(library_with_books.get_index_by_book_id(1))

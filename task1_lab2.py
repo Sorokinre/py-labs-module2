@@ -38,7 +38,11 @@ class Book:
 
 if __name__ == '__main__':
     # Инициализируем список книг
-    list_books = [Book(id_=book["id"], name=book["name"], pages=book["pages"]) for book in BOOKS_DATABASE]
+    list_books = [
+        Book(
+            id_=book["id"],
+            name=book["name"],
+            pages=book["pages"]) for book in BOOKS_DATABASE]
     for book in list_books:
         print(book)  # Проверяем метод __str__
 
